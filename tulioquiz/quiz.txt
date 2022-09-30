@@ -1,0 +1,33 @@
+faceis
+Quem pintou o quadro Mona Lisa?,Leonardo Da Vinci,Pablo Picasso,Vincent Van Gogh,Romero Britto
+Quem criou os personagens Mickey e Minnie Mouse?,Walt Disney,Chuck Jones,Carl Stalling,Maurício de Sousa
+Quem foi o(a) vencedor(a) do Big Brother Brasil 20?,Thelma Assis,Carlos Coimbra,Danilo Malta,Tiririca
+Quantos integrantes tem o grupo de k-pop Bangtan Boys conhecido como BTS?,7,6,5,4
+Quem é o autor da série literária Sítio do Picapau Amarelo?,Monteiro Lobato,Machado de Assis,Mário de Andrade,Guimarães Rosa
+Qual fruta envenenada comeu a Branca de Neve?,Maçã,Pêra,Morango,Jaca
+Quantos são os personagens principais do seriado norte-americano Friends?,6,5,7,4
+Como se chamam os dois melhores amigos do personagem Harry Potter?,Hermione e Rony,Margareth e Christian,Tom e Jerry,Kleyton e Kleydir
+Qual o cantor brasileiro é pai dos atores Fiuk e Cléo?,Fábio Júnior,Chitãozinho,Almir Sater,Caetano Veloso
+Qual grupo criou o passo de funk quadradinho de oito?,Bonde das Maravilhas,Bonde do Tigrão,Bonde das Novinhas,Bonde do Terror
+intermediarias
+Qual é o maior país do mundo?,Rússia,China,Brasil,Austrália
+Qual é país mais populoso do mundo?,China,Rússia,Estados Unidos,Canadá
+Qual é a capital do Brasil?,Brasília,São Paulo,Rio de Janeiro,Distrito Federal
+Qual o ponto mais alto do mundo?,Monte Everest,Pico da Neblina,Montanha Killimanjaro,Grand Canyon
+Qual oceano separa a América da África e da Europa?,Atlântico,Pacífico,Índico,Ártico
+Qual é o idioma oficial do Canadá?,Inglês e Francês,Inglês e Alemão,Alemão e Francês,Francês e Chinês
+Quando é verão no Brasil: qual é a estação do ano na Europa?,Inverno,Primavera,Verão,Outono
+Qual é a capital da Argentina?,Buenos Aires,Assunção,Medelin,Lima
+Qual cidade brasileira é conhecida como Cidade Maravilhosa,Rio de Janeiro,São Paulo,Porto Alegre,Recife
+Qual é o maior rio do Brasil?,Rio Amazonas,Rio São Francisco,Rio Solimões,Rio Capibaribe
+dificeis
+Quantas válvulas tem o coração?,4,3,2,5
+Em qual temperatura a água ferve?,100° C,98° C,101° C,102º C
+Quantos dentes tem uma pessoa adulta em geral?,32,30,27,29
+Como é o nome da luz emitida por aparelhos eletrônicos que - de acordo com estudiosos - causa o mesmo efeito que a cafeína ao cérebro?,Luz Azul,Luz Vermelha,Luz Violeta,Laser
+Quantos corações tem um polvo?,3,2,1,4
+Onde está localizado o menor osso do corpo humano?,Ouvido,Pés,Pescoço,Mãos
+Quantos litros de sangue uma pessoa adulta tem em média?,4 a 6 litros,3 a 5 litros,2 a 4 litros,7 litros
+Quem descobriu a existência da gravidade?,Isaac Newton,Albert Einstein,Charles Darwin,Galileu Galilei
+Núcleo e citoplasma e membrana fazem parte da composição de que tipo de estrutura?,Células,Mitocôndrias,Moléculas,Cetáceos
+O que mede o ano-luz?,Distância,Intensidade,Tempo,Temperatura
