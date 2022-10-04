@@ -3,19 +3,21 @@ import arquivos
 facil = []
 medio = []
 dificil = []
-feitas = []
-feitasMedio = []
-feitasDificil = []
 
 class Pergunta:
     
-    def __init__(self,questao,certa,errada1,errada2,errada3):
+    def __init__(self,questao,certa,errada1,errada2,errada3,nivel,feita):
         
         self.questao = questao
         self.certa = certa
         self.errada1 = errada1
         self.errada2 = errada2
         self.errada3 = errada3
+        self.nivel = nivel
+        self.feita = feita
+    
+    def setFeita(self,valor):
+        self.feita = valor
         
     
 def perguntasFaceis(lista):
@@ -33,7 +35,9 @@ def perguntasFaceis(lista):
                 errada2 = a[x][y]
             else:
                 errada3 = a[x][y]
-        f = Pergunta(questao,certa,errada1,errada2,errada3)
+            nivel = "facil"
+            feita = False
+        f = Pergunta(questao,certa,errada1,errada2,errada3,nivel,feita)
         listaFacil(f)
         
 def listaFacil(f):
@@ -53,7 +57,9 @@ def perguntasMedias(lista):
                 errada2 = a[x][y]
             else:
                 errada3 = a[x][y]
-        m = Pergunta(questao,certa,errada1,errada2,errada3)
+            nivel = "medio"
+            feita = False
+        m = Pergunta(questao,certa,errada1,errada2,errada3,nivel,feita)
         listaMedia(m)
         
 def listaMedia(m):
@@ -73,17 +79,21 @@ def perguntasDificeis(lista):
                 errada2 = a[x][y]
             else:
                 errada3 = a[x][y]
-        d = Pergunta(questao,certa,errada1,errada2,errada3)
+            nivel = "dificil"
+            feita = False
+        d = Pergunta(questao,certa,errada1,errada2,errada3,nivel,feita)
         listaDificil(d)
         
 def listaDificil(d):
     dificil.append(d)
 
 
+
+
+#recebe as listas do módulo arquivos.py para criar os objetos-pergunta
 perguntasFaceis(arquivos.faceis)
 perguntasMedias(arquivos.intermediarias)
 perguntasDificeis(arquivos.dificeis)
-
 
 
     

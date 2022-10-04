@@ -2,6 +2,7 @@ import PySimpleGUI as sg
 import janelas
 import jogador
 import pickle
+import perguntas
 
 #tema
 sg.theme('DarkBlue17')
@@ -9,7 +10,6 @@ sg.theme('DarkBlue17')
 try:
     with open('ranking.pkl','rb') as arq:
         ranking = pickle.load(arq)
-    print(ranking)
 except:
     pass
 
@@ -30,150 +30,128 @@ while True:
         
     #primeira pergunta
     if window == pergunta1 and (event == 'r1' or event == 'r2' or event == 'r3' or event=='r4'):
-        for x in janelas.listaQuestoes:
-            if window[event].get_text() == x[0]:
-                if x[1] == 'certa':
-                    sg.Popup("Parabéns! Ganhou um ponto!")
-                    jogador.jogadores[0].pontuacao += 1
-                    pergunta1.hide()
-                    pergunta2 = janelas.pergunta2()
-                else:
-                    sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
-                    pergunta1.hide()
-                    pergunta2 = janelas.pergunta2()
-                    
+        if window[event].get_text() == perguntas.facil[0].certa:
+            sg.Popup("Parabéns! Ganhou um ponto!")
+            jogador.jogadores[0].pontuacao += 1
+            pergunta1.hide()
+            pergunta2 = janelas.pergunta2()
+        else:
+            sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
+            pergunta1.hide()
+            pergunta2 = janelas.pergunta2()
+                
     #segunda pergunta
     if window == pergunta2 and (event == 'r1' or event == 'r2' or event == 'r3' or event=='r4'):
-        for x in janelas.listaQuestoes:
-            if window[event].get_text() == x[0]:
-                if x[1] == 'certa':
-                    sg.Popup("Parabéns! Ganhou um ponto!")
-                    jogador.jogadores[0].pontuacao += 1
-                    pergunta2.hide()
-                    pergunta3 = janelas.pergunta3()
-                else:
-                    sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
-                    pergunta2.hide()
-                    pergunta3 = janelas.pergunta3()
+        if window[event].get_text() == perguntas.facil[0].certa:
+            sg.Popup("Parabéns! Ganhou um ponto!")
+            jogador.jogadores[0].pontuacao += 1
+            pergunta2.hide()
+            pergunta3 = janelas.pergunta3()
+        else:
+            sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
+            pergunta2.hide()
+            pergunta3 = janelas.pergunta3()
     
     #terceira pergunta
     if window == pergunta3 and (event == 'r1' or event == 'r2' or event == 'r3' or event=='r4'):
-        for x in janelas.listaQuestoes:
-            if window[event].get_text() == x[0]:
-                if x[1] == 'certa':
-                    sg.Popup("Parabéns! Ganhou mais um ponto!")
-                    jogador.jogadores[0].pontuacao += 1
-                    pergunta3.hide()
-                    pergunta4 = janelas.pergunta4()
-                else:
-                    sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
-                    pergunta3.hide()
-                    pergunta4 = janelas.pergunta4()
+        if window[event].get_text() == perguntas.facil[0].certa:
+            sg.Popup("Parabéns! Ganhou um ponto!")
+            jogador.jogadores[0].pontuacao += 1
+            pergunta3.hide()
+            pergunta4 = janelas.pergunta4()
+        else:
+            sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
+            pergunta3.hide()
+            pergunta4 = janelas.pergunta4()
                     
     #quarta pergunta
     if window == pergunta4 and (event == 'r1' or event == 'r2' or event == 'r3' or event=='r4'):
-        for x in janelas.listaQuestoes:
-            if window[event].get_text() == x[0]:
-                if x[1] == 'certa':
-                    sg.Popup("Parabéns! Ganhou mais um ponto!")
-                    jogador.jogadores[0].pontuacao += 1
-                    pergunta4.hide()
-                    pergunta5 = janelas.pergunta5()
-                else:
-                    sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
-                    pergunta4.hide()
-                    pergunta5 = janelas.pergunta5()
+        if window[event].get_text() == perguntas.medio[0].certa:
+            sg.Popup("Parabéns! Ganhou um ponto!")
+            jogador.jogadores[0].pontuacao += 1
+            pergunta4.hide()
+            pergunta5 = janelas.pergunta5()
+        else:
+            sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
+            pergunta4.hide()
+            pergunta5 = janelas.pergunta5()
                     
     #quinta pergunta
     if window == pergunta5 and (event == 'r1' or event == 'r2' or event == 'r3' or event=='r4'):
-        for x in janelas.listaQuestoes:
-            if window[event].get_text() == x[0]:
-                if x[1] == 'certa':
-                    sg.Popup("Parabéns! Ganhou mais um ponto!")
-                    jogador.jogadores[0].pontuacao += 1
-                    pergunta5.hide()
-                    pergunta6 = janelas.pergunta6()
-                else:
-                    sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
-                    pergunta5.hide()
-                    pergunta6 = janelas.pergunta6()
+        if window[event].get_text() == perguntas.medio[0].certa:
+            sg.Popup("Parabéns! Ganhou um ponto!")
+            jogador.jogadores[0].pontuacao += 1
+            pergunta5.hide()
+            pergunta6 = janelas.pergunta6()
+        else:
+            sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
+            pergunta5.hide()
+            pergunta6 = janelas.pergunta6()
                     
     #sexta pergunta
     if window == pergunta6 and (event == 'r1' or event == 'r2' or event == 'r3' or event=='r4'):
-        for x in janelas.listaQuestoes:
-            if window[event].get_text() == x[0]:
-                if x[1] == 'certa':
-                    sg.Popup("Parabéns! Ganhou mais um ponto!")
-                    jogador.jogadores[0].pontuacao += 1
-                    pergunta6.hide()
-                    pergunta7 = janelas.pergunta7()
-                else:
-                    sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
-                    pergunta6.hide()
-                    pergunta7 = janelas.pergunta7()
+        if window[event].get_text() == perguntas.medio[0].certa:
+            sg.Popup("Parabéns! Ganhou um ponto!")
+            jogador.jogadores[0].pontuacao += 1
+            pergunta6.hide()
+            pergunta7 = janelas.pergunta7()
+        else:
+            sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
+            pergunta6.hide()
+            pergunta7 = janelas.pergunta7()
                     
     #sétima pergunta
     if window == pergunta7 and (event == 'r1' or event == 'r2' or event == 'r3' or event=='r4'):
-        for x in janelas.listaQuestoes:
-            if window[event].get_text() == x[0]:
-                if x[1] == 'certa':
-                    sg.Popup("Parabéns! Ganhou mais um ponto!")
-                    jogador.jogadores[0].pontuacao += 1
-                    pergunta7.hide()
-                    pergunta8 = janelas.pergunta8()
-                else:
-                    sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
-                    pergunta7.hide()
-                    pergunta8 = janelas.pergunta8()
+        if window[event].get_text() == perguntas.dificil[0].certa:
+            sg.Popup("Parabéns! Ganhou um ponto!")
+            jogador.jogadores[0].pontuacao += 1
+            pergunta7.hide()
+            pergunta8 = janelas.pergunta8()
+        else:
+            sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
+            pergunta7.hide()
+            pergunta8 = janelas.pergunta8()
                     
     #oitava pergunta
     if window == pergunta8 and (event == 'r1' or event == 'r2' or event == 'r3' or event=='r4'):
-        for x in janelas.listaQuestoes:
-            if window[event].get_text() == x[0]:
-                if x[1] == 'certa':
-                    sg.Popup("Parabéns! Ganhou mais um ponto!")
-                    jogador.jogadores[0].pontuacao += 1
-                    pergunta8.hide()
-                    pergunta9 = janelas.pergunta9()
-                else:
-                    sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
-                    pergunta8.hide()
-                    pergunta9 = janelas.pergunta9()
+        if window[event].get_text() == perguntas.dificil[0].certa:
+            sg.Popup("Parabéns! Ganhou um ponto!")
+            jogador.jogadores[0].pontuacao += 1
+            pergunta8.hide()
+            pergunta9 = janelas.pergunta9()
+        else:
+            sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
+            pergunta8.hide()
+            pergunta9 = janelas.pergunta9()
                     
     #nona pergunta
     if window == pergunta9 and (event == 'r1' or event == 'r2' or event == 'r3' or event=='r4'):
-        for x in janelas.listaQuestoes:
-            if window[event].get_text() == x[0]:
-                if x[1] == 'certa':
-                    sg.Popup("Parabéns! Ganhou mais um ponto!")
-                    jogador.jogadores[0].pontuacao += 1
-                    pergunta9.hide()
-                    pergunta10 = janelas.pergunta10()
-                else:
-                    sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
-                    pergunta9.hide()
-                    pergunta10 = janelas.pergunta9()
+        if window[event].get_text() == perguntas.dificil[0].certa:
+            sg.Popup("Parabéns! Ganhou um ponto!")
+            jogador.jogadores[0].pontuacao += 1
+            pergunta9.hide()
+            pergunta10 = janelas.pergunta10()
+        else:
+            sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
+            pergunta9.hide()
+            pergunta10 = janelas.pergunta10()
                     
     #décima pergunta
     if window == pergunta10 and (event == 'r1' or event == 'r2' or event == 'r3' or event=='r4'):
-        for x in janelas.listaQuestoes:
-            if window[event].get_text() == x[0]:
-                if x[1] == 'certa':
-                    sg.Popup("Parabéns! Ganhou mais um ponto!")
-                    jogador.jogadores[0].pontuacao += 1
-                    pergunta10.hide()
-                    ranking = janelas.final()
-                else:
-                    sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
-                    pergunta10.hide()
-                    final = janelas.final()
+        if window[event].get_text() == perguntas.dificil[0].certa:
+            sg.Popup("Parabéns! Ganhou um ponto!")
+            jogador.jogadores[0].pontuacao += 1
+            pergunta10.hide()
+            final = janelas.final()
+        else:
+            sg.Popup("Que pena! Resposta incorreta! Tente na próxima!")
+            pergunta10.hide()
+            final = janelas.final()
     
     #ranking
     if window == final and event == 'cabou':
         nome = jogador.jogadores[0].nome
-        print(nome)
         pontos = jogador.jogadores[0].pontuacao
-        print(pontos)
         primeiroLugar = ''
         segundoLugar = ''
         terceiroLugar = ''
@@ -184,8 +162,6 @@ while True:
         terceiroLugarPontos = 0
         quartoLugarPontos = 0
         quintoLugarPontos = 0
-        print(primeiroLugar)
-        print(primeiroLugarPontos)
         if pontos > primeiroLugarPontos:
             primeiroLugar, primeiroLugarPontos = nome, pontos
         elif pontos > segundoLugarPontos:
@@ -203,6 +179,9 @@ while True:
         ranking[terceiroLugar] = terceiroLugarPontos
         ranking[quartoLugar] = quartoLugarPontos
         ranking[quintoLugar] = quintoLugarPontos
+        perguntas.facil = [x.setFeita(False) for x in perguntas.facil]
+        perguntas.medio = [x.setFeita(False) for x in perguntas.medio]
+        perguntas.dificil = [x.setFeita(False) for x in perguntas.dificil]
         final.hide()
         abertura = janelas.abertura()
         

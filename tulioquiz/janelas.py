@@ -1,8 +1,7 @@
-from optparse import Values
 import PySimpleGUI as sg 
 import perguntas
 import jogador
-from random import randint,shuffle
+from random import shuffle
 
 listaQuestoes = []
 
@@ -22,7 +21,7 @@ def abertura():
 def pergunta1():
     
     shuffle(perguntas.facil)
-    perguntas.feitas.append(perguntas.facil[0])
+    perguntas.facil[0].setFeita(True)
     certa = (perguntas.facil[0].certa, 'certa')
     errada1 = (perguntas.facil[0].errada1, 'errada')
     errada2 = (perguntas.facil[0].errada2, 'errada')
@@ -50,12 +49,12 @@ def pergunta1():
 def pergunta2():
     while True:
         shuffle(perguntas.facil)
-        if perguntas.facil[0] in perguntas.feitas:
+        if perguntas.facil[0].feita == True:
             continue
         else:
             break
     
-    perguntas.feitas.append(perguntas.facil[0])
+    perguntas.facil[0].setFeita(True)
     certa = (perguntas.facil[0].certa,'certa')
     errada1 = (perguntas.facil[0].errada1,'errada1')
     errada2 = (perguntas.facil[0].errada2,'errada2')
@@ -83,12 +82,12 @@ def pergunta2():
 def pergunta3():
     while True:
         shuffle(perguntas.facil)
-        if perguntas.facil[0] in perguntas.feitas:
+        if perguntas.facil[0].feita == True:
             continue
         else:
             break
     
-    perguntas.feitas.append(perguntas.facil[0])
+    perguntas.facil[0].setFeita(True)
     certa = (perguntas.facil[0].certa,'certa')
     errada1 = (perguntas.facil[0].errada1,'errada1')
     errada2 = (perguntas.facil[0].errada2,'errada2')
@@ -116,7 +115,7 @@ def pergunta3():
 def pergunta4():
     
     shuffle(perguntas.medio)
-    perguntas.feitasMedio.append(perguntas.medio[0])
+    perguntas.medio[0].setFeita(True)
     certa = (perguntas.medio[0].certa, 'certa')
     errada1 = (perguntas.medio[0].errada1, 'errada')
     errada2 = (perguntas.medio[0].errada2, 'errada')
@@ -144,12 +143,12 @@ def pergunta4():
 def pergunta5():
     while True:
         shuffle(perguntas.medio)
-        if perguntas.medio[0] in perguntas.feitasMedio:
+        if perguntas.medio[0].feita == True:
             continue
         else:
             break
     
-    perguntas.feitasMedio.append(perguntas.medio[0])
+    perguntas.medio[0].setFeita(True)
     certa = (perguntas.medio[0].certa,'certa')
     errada1 = (perguntas.medio[0].errada1,'errada1')
     errada2 = (perguntas.medio[0].errada2,'errada2')
@@ -177,12 +176,12 @@ def pergunta5():
 def pergunta6():
     while True:
         shuffle(perguntas.medio)
-        if perguntas.medio[0] in perguntas.feitasMedio:
+        if perguntas.medio[0].feita == True:
             continue
         else:
             break
     
-    perguntas.feitasMedio.append(perguntas.medio[0])
+    perguntas.medio[0].setFeita(True)
     certa = (perguntas.medio[0].certa,'certa')
     errada1 = (perguntas.medio[0].errada1,'errada1')
     errada2 = (perguntas.medio[0].errada2,'errada2')
@@ -209,7 +208,7 @@ def pergunta6():
 
 def pergunta7():
     shuffle(perguntas.dificil)
-    perguntas.feitasDificil.append(perguntas.dificil[0])
+    perguntas.dificil[0].setFeita(True)
     certa = (perguntas.dificil[0].certa, 'certa')
     errada1 = (perguntas.dificil[0].errada1, 'errada')
     errada2 = (perguntas.dificil[0].errada2, 'errada')
@@ -237,12 +236,12 @@ def pergunta7():
 def pergunta8():
     while True:
         shuffle(perguntas.dificil)
-        if perguntas.dificil[0] in perguntas.feitasDificil:
+        if perguntas.dificil[0].feita == True:
             continue
         else:
             break
     
-    perguntas.feitasDificil.append(perguntas.dificil[0])
+    perguntas.dificil[0].setFeita(True)
     certa = (perguntas.dificil[0].certa,'certa')
     errada1 = (perguntas.dificil[0].errada1,'errada1')
     errada2 = (perguntas.dificil[0].errada2,'errada2')
@@ -270,12 +269,12 @@ def pergunta8():
 def pergunta9():
     while True:
         shuffle(perguntas.dificil)
-        if perguntas.dificil[0] in perguntas.feitasDificil:
+        if perguntas.dificil[0].feita == True:
             continue
         else:
             break
     
-    perguntas.feitasDificil.append(perguntas.dificil[0])
+    perguntas.dificil[0].setFeita(True)
     certa = (perguntas.dificil[0].certa,'certa')
     errada1 = (perguntas.dificil[0].errada1,'errada1')
     errada2 = (perguntas.dificil[0].errada2,'errada2')
@@ -303,12 +302,12 @@ def pergunta9():
 def pergunta10():
     while True:
         shuffle(perguntas.dificil)
-        if perguntas.dificil[0] in perguntas.feitasDificil:
+        if perguntas.dificil[0].feita == True:
             continue
         else:
             break
     
-    perguntas.feitasDificil.append(perguntas.dificil[0])
+    perguntas.dificil[0].setFeita(True)
     certa = (perguntas.dificil[0].certa,'certa')
     errada1 = (perguntas.dificil[0].errada1,'errada1')
     errada2 = (perguntas.dificil[0].errada2,'errada2')

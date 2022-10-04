@@ -18,3 +18,5 @@ dificeis = [x.split(",") for x in dificeis]
 
 
 
+
+
