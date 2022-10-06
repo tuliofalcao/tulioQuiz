@@ -19,20 +19,18 @@ def abertura():
     return sg.Window('QUIZ',layout,element_justification='center',finalize=True)
 
 def pergunta1():
-    while True:
-        shuffle(perguntas.facil)
-        if perguntas.facil[0].feita == True:
-            continue
-        else:
-            break
-    shuffle(perguntas.facil)
-    perguntas.facil[0].setFeita(True)
-    print(perguntas.facil[0].questao)
-    print(perguntas.facil[0].certa)
-    certa = (perguntas.facil[0].certa, 'certa')
-    errada1 = (perguntas.facil[0].errada1, 'errada')
-    errada2 = (perguntas.facil[0].errada2, 'errada')
-    errada3 = (perguntas.facil[0].errada3, 'errada')
+    #while True:
+    #    shuffle(perguntas.facil)
+    #    if perguntas.facil[0].feita == True:
+    #        continue
+    #    else:
+    #        break
+    #perguntas.facil[0].feita = True
+    p = perguntas.retornaPergunta(perguntas.facil)
+    certa = (p.certa, 'certa')
+    errada1 = (p.errada1, 'errada')
+    errada2 = (p.errada2, 'errada')
+    errada3 = (p.errada3, 'errada')
     listaQuestoes.append(certa)
     listaQuestoes.append(errada1)
     listaQuestoes.append(errada2)
@@ -54,18 +52,18 @@ def pergunta1():
     return sg.Window("QUIZ", layout, element_justification='center',finalize=True)
 
 def pergunta2():
-    while True:
-        shuffle(perguntas.facil)
-        if perguntas.facil[0].feita == True:
-            continue
-        else:
-            break
+    #while True:
+    #    shuffle(perguntas.facil)
+    #    if perguntas.facil[0].feita == True:
+    #        continue
+    #    else:
+    #        break
     
-    perguntas.facil[0].setFeita(True)
-    certa = (perguntas.facil[0].certa,'certa')
-    errada1 = (perguntas.facil[0].errada1,'errada1')
-    errada2 = (perguntas.facil[0].errada2,'errada2')
-    errada3 = (perguntas.facil[0].errada3,'errada3')
+    p = perguntas.retornaPergunta(perguntas.facil)
+    certa = (p.certa, 'certa')
+    errada1 = (p.errada1, 'errada')
+    errada2 = (p.errada2, 'errada')
+    errada3 = (p.errada3, 'errada')
     listaQuestoes[0] = certa
     listaQuestoes[1] = errada1
     listaQuestoes[2] = errada2
@@ -87,18 +85,18 @@ def pergunta2():
     return sg.Window("QUIZ", layout, element_justification='center',finalize=True)
 
 def pergunta3():
-    while True:
-        shuffle(perguntas.facil)
-        if perguntas.facil[0].feita == True:
-            continue
-        else:
-            break
+    #while True:
+    #    shuffle(perguntas.facil)
+    #    if perguntas.facil[0].feita == True:
+    #        continue
+    #    else:
+    #        break
     
-    perguntas.facil[0].setFeita(True)
-    certa = (perguntas.facil[0].certa,'certa')
-    errada1 = (perguntas.facil[0].errada1,'errada1')
-    errada2 = (perguntas.facil[0].errada2,'errada2')
-    errada3 = (perguntas.facil[0].errada3,'errada3')
+    p = perguntas.retornaPergunta(perguntas.facil)
+    certa = (p.certa, 'certa')
+    errada1 = (p.errada1, 'errada')
+    errada2 = (p.errada2, 'errada')
+    errada3 = (p.errada3, 'errada')
     listaQuestoes[0] = certa
     listaQuestoes[1] = errada1
     listaQuestoes[2] = errada2
@@ -121,12 +119,11 @@ def pergunta3():
     
 def pergunta4():
     
-    shuffle(perguntas.medio)
-    perguntas.medio[0].setFeita(True)
-    certa = (perguntas.medio[0].certa, 'certa')
-    errada1 = (perguntas.medio[0].errada1, 'errada')
-    errada2 = (perguntas.medio[0].errada2, 'errada')
-    errada3 = (perguntas.medio[0].errada3, 'errada')
+    p = perguntas.retornaPergunta(perguntas.medio)
+    certa = (p.certa, 'certa')
+    errada1 = (p.errada1, 'errada')
+    errada2 = (p.errada2, 'errada')
+    errada3 = (p.errada3, 'errada')
     listaQuestoes[0] = certa
     listaQuestoes[1] = errada1
     listaQuestoes[2] = errada2
@@ -148,18 +145,18 @@ def pergunta4():
     return sg.Window("QUIZ", layout, element_justification='center',finalize=True)        
     
 def pergunta5():
-    while True:
-        shuffle(perguntas.medio)
-        if perguntas.medio[0].feita == True:
-            continue
-        else:
-            break
+    #while True:
+    #    shuffle(perguntas.medio)
+    #    if perguntas.medio[0].feita == True:
+    #        continue
+    #    else:
+    #        break
     
-    perguntas.medio[0].setFeita(True)
-    certa = (perguntas.medio[0].certa,'certa')
-    errada1 = (perguntas.medio[0].errada1,'errada1')
-    errada2 = (perguntas.medio[0].errada2,'errada2')
-    errada3 = (perguntas.medio[0].errada3,'errada3')
+    p = perguntas.retornaPergunta(perguntas.medio)
+    certa = (p.certa, 'certa')
+    errada1 = (p.errada1, 'errada')
+    errada2 = (p.errada2, 'errada')
+    errada3 = (p.errada3, 'errada')
     listaQuestoes[0] = certa
     listaQuestoes[1] = errada1
     listaQuestoes[2] = errada2
@@ -181,18 +178,18 @@ def pergunta5():
     return sg.Window("QUIZ", layout, element_justification='center',finalize=True)
 
 def pergunta6():
-    while True:
-        shuffle(perguntas.medio)
-        if perguntas.medio[0].feita == True:
-            continue
-        else:
-            break
+    #while True:
+    #    shuffle(perguntas.medio)
+    #    if perguntas.medio[0].feita == True:
+    #        continue
+    #    else:
+    #        break
     
-    perguntas.medio[0].setFeita(True)
-    certa = (perguntas.medio[0].certa,'certa')
-    errada1 = (perguntas.medio[0].errada1,'errada1')
-    errada2 = (perguntas.medio[0].errada2,'errada2')
-    errada3 = (perguntas.medio[0].errada3,'errada3')
+    p = perguntas.retornaPergunta(perguntas.medio)
+    certa = (p.certa, 'certa')
+    errada1 = (p.errada1, 'errada')
+    errada2 = (p.errada2, 'errada')
+    errada3 = (p.errada3, 'errada')
     listaQuestoes[0] = certa
     listaQuestoes[1] = errada1
     listaQuestoes[2] = errada2
@@ -214,12 +211,11 @@ def pergunta6():
     return sg.Window("QUIZ", layout, element_justification='center',finalize=True)
 
 def pergunta7():
-    shuffle(perguntas.dificil)
-    perguntas.dificil[0].setFeita(True)
-    certa = (perguntas.dificil[0].certa, 'certa')
-    errada1 = (perguntas.dificil[0].errada1, 'errada')
-    errada2 = (perguntas.dificil[0].errada2, 'errada')
-    errada3 = (perguntas.dificil[0].errada3, 'errada')
+    p = perguntas.retornaPergunta(perguntas.dificil)
+    certa = (p.certa, 'certa')
+    errada1 = (p.errada1, 'errada')
+    errada2 = (p.errada2, 'errada')
+    errada3 = (p.errada3, 'errada')
     listaQuestoes[0] = certa
     listaQuestoes[1] = errada1
     listaQuestoes[2] = errada2
@@ -241,18 +237,18 @@ def pergunta7():
     return sg.Window("QUIZ", layout, element_justification='center',finalize=True)
     
 def pergunta8():
-    while True:
-        shuffle(perguntas.dificil)
-        if perguntas.dificil[0].feita == True:
-            continue
-        else:
-            break
+    #while True:
+    #    shuffle(perguntas.dificil)
+    #    if perguntas.dificil[0].feita == True:
+    #        continue
+    #    else:
+    #        break
     
-    perguntas.dificil[0].setFeita(True)
-    certa = (perguntas.dificil[0].certa,'certa')
-    errada1 = (perguntas.dificil[0].errada1,'errada1')
-    errada2 = (perguntas.dificil[0].errada2,'errada2')
-    errada3 = (perguntas.dificil[0].errada3,'errada3')
+    p = perguntas.retornaPergunta(perguntas.dificil)
+    certa = (p.certa, 'certa')
+    errada1 = (p.errada1, 'errada')
+    errada2 = (p.errada2, 'errada')
+    errada3 = (p.errada3, 'errada')
     listaQuestoes[0] = certa
     listaQuestoes[1] = errada1
     listaQuestoes[2] = errada2
@@ -274,18 +270,18 @@ def pergunta8():
     return sg.Window("QUIZ", layout, element_justification='center',finalize=True)
 
 def pergunta9():
-    while True:
-        shuffle(perguntas.dificil)
-        if perguntas.dificil[0].feita == True:
-            continue
-        else:
-            break
+    #while True:
+    #    shuffle(perguntas.dificil)
+    #    if perguntas.dificil[0].feita == True:
+    #        continue
+    #    else:
+    #        break
     
-    perguntas.dificil[0].setFeita(True)
-    certa = (perguntas.dificil[0].certa,'certa')
-    errada1 = (perguntas.dificil[0].errada1,'errada1')
-    errada2 = (perguntas.dificil[0].errada2,'errada2')
-    errada3 = (perguntas.dificil[0].errada3,'errada3')
+    p = perguntas.retornaPergunta(perguntas.dificil)
+    certa = (p.certa, 'certa')
+    errada1 = (p.errada1, 'errada')
+    errada2 = (p.errada2, 'errada')
+    errada3 = (p.errada3, 'errada')
     listaQuestoes[0] = certa
     listaQuestoes[1] = errada1
     listaQuestoes[2] = errada2
@@ -307,18 +303,18 @@ def pergunta9():
     return sg.Window("QUIZ", layout, element_justification='center',finalize=True)
 
 def pergunta10():
-    while True:
-        shuffle(perguntas.dificil)
-        if perguntas.dificil[0].feita == True:
-            continue
-        else:
-            break
+    #while True:
+    #    shuffle(perguntas.dificil)
+    #    if perguntas.dificil[0].feita == True:
+    #        continue
+    #    else:
+    #        break
     
-    perguntas.dificil[0].setFeita(True)
-    certa = (perguntas.dificil[0].certa,'certa')
-    errada1 = (perguntas.dificil[0].errada1,'errada1')
-    errada2 = (perguntas.dificil[0].errada2,'errada2')
-    errada3 = (perguntas.dificil[0].errada3,'errada3')
+    p = perguntas.retornaPergunta(perguntas.dificil)
+    certa = (p.certa, 'certa')
+    errada1 = (p.errada1, 'errada')
+    errada2 = (p.errada2, 'errada')
+    errada3 = (p.errada3, 'errada')
     listaQuestoes[0] = certa
     listaQuestoes[1] = errada1
     listaQuestoes[2] = errada2

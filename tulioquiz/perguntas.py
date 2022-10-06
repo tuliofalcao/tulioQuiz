@@ -1,10 +1,12 @@
+from random import shuffle
+
 facil = []
 medio = []
 dificil = []
 
 class Pergunta:
     
-    def __init__(self,questao,certa,errada1,errada2,errada3,nivel,feita):
+    def __init__(self,questao,certa,errada1,errada2,errada3,nivel,feita=False):
         
         self.questao = questao
         self.certa = certa
@@ -12,10 +14,7 @@ class Pergunta:
         self.errada2 = errada2
         self.errada3 = errada3
         self.nivel = nivel
-        self.feita = feita
-    
-    def setFeita(self,valor):
-        self.feita = valor
+        self.feita = False
         
     
 def perguntasFaceis(lista):
@@ -40,7 +39,6 @@ def perguntasFaceis(lista):
         
 def listaFacil(f):
     facil.append(f)
-    print(f'perguntas/facil: {facil}')
         
 def perguntasMedias(lista):
     for x in range(10):
@@ -86,7 +84,15 @@ def perguntasDificeis(lista):
 def listaDificil(d):
     dificil.append(d)
 
-
+def retornaPergunta(lista):
+    while True:
+        shuffle(lista)
+        if lista[0].feita == True:
+            continue
+        else:
+            lista[0].feita = True
+            break
+    return lista[0]
 
 
 

@@ -32,7 +32,6 @@ while True:
         faceis = [arquivo.readline()[:-1] for x in range(11)]
         del(faceis[0])
         faceis = [x.split(",") for x in faceis]
-        print(f'main/abertura/faceis: {faceis}')
 
         intermediarias = [arquivo.readline()[:-1] for x in range(12,23)]
         del(intermediarias[0])
@@ -46,7 +45,7 @@ while True:
         perguntas.perguntasFaceis(faceis)
         perguntas.perguntasMedias(intermediarias)
         perguntas.perguntasDificeis(dificeis)
-        
+                
         #dados da tela
         nome = values['nome']
         pontuacao = 0
@@ -181,8 +180,6 @@ while True:
         pontos = jogador.jogadores[0].pontuacao
         rankingOrdem[nome] = pontos
         ordem = sorted(rankingOrdem.items(), key=lambda x: x[1], reverse=True)
-        print(rankingOrdem)
-        print(ordem)
         rankingOrdem = {}        
         
         sg.popup_scrolled(f"========== RANKING ==========\n\n1º - {ordem[0][0]} - {ordem[0][1]} pontos\n2º - {ordem[1][0]} - {ordem[1][1]} pontos\n3º - {ordem[2][0]} - {ordem[2][1]} pontos\n4º - {ordem[3][0]} - {ordem[3][1]} pontos\n5º - {ordem[4][0]} - {ordem[4][1]} pontos\n")
