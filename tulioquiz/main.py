@@ -21,8 +21,9 @@ while True:
         del(ranking[0])
         ranking = [x.split('-') for x in ranking]
         ranking = [[x[0][:-1],x[1][1:-1],x[2][1:]] for x in ranking]
-        print(ranking)
-        print()
+        rankingOrdem = {}
+        for x in range(5):
+            rankingOrdem[ranking[x][1]] = int(ranking[x][2][0:2].strip())
         rank.close()
         
         #abre o arquivo com perguntas
@@ -31,7 +32,7 @@ while True:
         faceis = [arquivo.readline()[:-1] for x in range(11)]
         del(faceis[0])
         faceis = [x.split(",") for x in faceis]
-        print(faceis)
+        print(f'main/abertura/faceis: {faceis}')
 
         intermediarias = [arquivo.readline()[:-1] for x in range(12,23)]
         del(intermediarias[0])
@@ -178,33 +179,16 @@ while True:
     if window == final and event == 'cabou':
         nome = jogador.jogadores[0].nome
         pontos = jogador.jogadores[0].pontuacao
-        primeiroLugar = ranking[0][1]
-        print(primeiroLugar)
-        segundoLugar = ranking[1][1]
-        terceiroLugar = ranking[2][1]
-        quartoLugar = ranking[3][1]
-        quintoLugar = ranking[4][1]
-        primeiroLugarPontos = int(ranking[0][2][0])
-        print(primeiroLugarPontos)
-        segundoLugarPontos = int(ranking[1][2][0])
-        terceiroLugarPontos = int(ranking[2][2][0])
-        quartoLugarPontos = int(ranking[3][2][0])
-        quintoLugarPontos = int(ranking[4][2][0])
-        if pontos > primeiroLugarPontos:
-            primeiroLugar, primeiroLugarPontos = nome, pontos
-        elif pontos > segundoLugarPontos:
-            segundoLugar, segundoLugarPontos = nome, pontos
-        elif pontos > terceiroLugarPontos:
-            terceiroLugar, terceiroLugarPontos = nome, pontos
-        elif pontos > quartoLugarPontos:
-            quartoLugar, quartoLugarPontos = nome, pontos
-        elif pontos > quintoLugarPontos:
-            quintoLugar, quintoLugarPontos = nome, pontos
+        rankingOrdem[nome] = pontos
+        ordem = sorted(rankingOrdem.items(), key=lambda x: x[1], reverse=True)
+        print(rankingOrdem)
+        print(ordem)
+        rankingOrdem = {}        
         
-        sg.popup_scrolled(f"========== RANKING ==========\n\n1º - {primeiroLugar} - {primeiroLugarPontos} pontos\n2º - {segundoLugar} - {segundoLugarPontos} pontos\n3º - {terceiroLugar} - {terceiroLugarPontos} pontos\n4º - {quartoLugar} - {quartoLugarPontos} pontos\n5º - {quintoLugar} - {quintoLugarPontos} pontos\n")
+        sg.popup_scrolled(f"========== RANKING ==========\n\n1º - {ordem[0][0]} - {ordem[0][1]} pontos\n2º - {ordem[1][0]} - {ordem[1][1]} pontos\n3º - {ordem[2][0]} - {ordem[2][1]} pontos\n4º - {ordem[3][0]} - {ordem[3][1]} pontos\n5º - {ordem[4][0]} - {ordem[4][1]} pontos\n")
         
         rank = open('ranking.txt','w')
-        rank.writelines(['========== RANKING ==========',f"\n1º - {primeiroLugar} - {primeiroLugarPontos} pontos",f"\n2º - {segundoLugar} - {segundoLugarPontos} pontos",f"\n3º - {terceiroLugar} - {terceiroLugarPontos} pontos",f"\n4º - {quartoLugar} - {quartoLugarPontos} pontos",f"\n5º - {quintoLugar} - {quintoLugarPontos} pontos"])
+        rank.writelines(['========== RANKING ==========',f"\n1º - {ordem[0][0]} - {ordem[0][1]} pontos",f"\n2º - {ordem[1][0]} - {ordem[1][1]} pontos",f"\n3º - {ordem[2][0]} - {ordem[2][1]} pontos",f"\n4º - {ordem[3][0]} - {ordem[3][1]} pontos",f"\n5º - {ordem[4][0]} - {ordem[4][1]} pontos"])
         rank.close()
         
         jogador.jogadores = []

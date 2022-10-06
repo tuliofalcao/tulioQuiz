@@ -1,5 +1,3 @@
-import arquivos
-
 facil = []
 medio = []
 dificil = []
@@ -42,6 +40,7 @@ def perguntasFaceis(lista):
         
 def listaFacil(f):
     facil.append(f)
+    print(f'perguntas/facil: {facil}')
         
 def perguntasMedias(lista):
     for x in range(10):
@@ -90,10 +89,7 @@ def listaDificil(d):
 
 
 
-#recebe as listas do módulo arquivos.py para criar os objetos-pergunta
-perguntasFaceis(arquivos.faceis)
-perguntasMedias(arquivos.intermediarias)
-perguntasDificeis(arquivos.dificeis)
+
 
 
 
