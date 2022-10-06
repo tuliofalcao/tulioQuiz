@@ -13,6 +13,7 @@ intermediarias = [x.split(",") for x in intermediarias]
 dificeis = [arquivo.readline()[:-1] for x in range(23,34)]
 del(dificeis[0])
 dificeis = [x.split(",") for x in dificeis]
+    
 
 
 

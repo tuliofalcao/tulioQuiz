@@ -19,9 +19,16 @@ def abertura():
     return sg.Window('QUIZ',layout,element_justification='center',finalize=True)
 
 def pergunta1():
-    
+    while True:
+        shuffle(perguntas.facil)
+        if perguntas.facil[0].feita == True:
+            continue
+        else:
+            break
     shuffle(perguntas.facil)
     perguntas.facil[0].setFeita(True)
+    print(perguntas.facil[0].questao)
+    print(perguntas.facil[0].certa)
     certa = (perguntas.facil[0].certa, 'certa')
     errada1 = (perguntas.facil[0].errada1, 'errada')
     errada2 = (perguntas.facil[0].errada2, 'errada')

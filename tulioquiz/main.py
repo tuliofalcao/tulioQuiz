@@ -1,17 +1,10 @@
-import PySimpleGUI as sg 
+import PySimpleGUI as sg
 import janelas
 import jogador
-import pickle
 import perguntas
 
 #tema
 sg.theme('DarkBlue17')
-
-try:
-    with open('ranking.pkl','rb') as arq:
-        ranking = pickle.load(arq)
-except:
-    pass
 
 #gerenciamento de janelas
 abertura,pergunta1,pergunta2,pergunta3,pergunta4,pergunta5,pergunta6,pergunta7,pergunta8,pergunta9,pergunta10,final = janelas.abertura(),None,None,None,None,None,None,None,None,None,None,None
@@ -21,6 +14,39 @@ while True:
     
     #abertura
     if window == abertura and event == 'INICIAR':
+        
+        #abre o arquivo ranking.txt
+        rank = open('ranking.txt','r')
+        ranking = [rank.readline()[:-1] for x in range(6)]
+        del(ranking[0])
+        ranking = [x.split('-') for x in ranking]
+        ranking = [[x[0][:-1],x[1][1:-1],x[2][1:]] for x in ranking]
+        print(ranking)
+        print()
+        rank.close()
+        
+        #abre o arquivo com perguntas
+        arquivo = open("quiz.txt", "r")
+
+        faceis = [arquivo.readline()[:-1] for x in range(11)]
+        del(faceis[0])
+        faceis = [x.split(",") for x in faceis]
+        print(faceis)
+
+        intermediarias = [arquivo.readline()[:-1] for x in range(12,23)]
+        del(intermediarias[0])
+        intermediarias = [x.split(",") for x in intermediarias]
+
+        dificeis = [arquivo.readline()[:-1] for x in range(23,34)]
+        del(dificeis[0])
+        dificeis = [x.split(",") for x in dificeis]
+        
+        #recebe as listas com perguntas para criar os objetos-pergunta
+        perguntas.perguntasFaceis(faceis)
+        perguntas.perguntasMedias(intermediarias)
+        perguntas.perguntasDificeis(dificeis)
+        
+        #dados da tela
         nome = values['nome']
         pontuacao = 0
         usuario = jogador.Jogador(nome,pontuacao)
@@ -152,16 +178,18 @@ while True:
     if window == final and event == 'cabou':
         nome = jogador.jogadores[0].nome
         pontos = jogador.jogadores[0].pontuacao
-        primeiroLugar = ''
-        segundoLugar = ''
-        terceiroLugar = ''
-        quartoLugar = ''
-        quintoLugar = ''
-        primeiroLugarPontos = 0
-        segundoLugarPontos = 0
-        terceiroLugarPontos = 0
-        quartoLugarPontos = 0
-        quintoLugarPontos = 0
+        primeiroLugar = ranking[0][1]
+        print(primeiroLugar)
+        segundoLugar = ranking[1][1]
+        terceiroLugar = ranking[2][1]
+        quartoLugar = ranking[3][1]
+        quintoLugar = ranking[4][1]
+        primeiroLugarPontos = int(ranking[0][2][0])
+        print(primeiroLugarPontos)
+        segundoLugarPontos = int(ranking[1][2][0])
+        terceiroLugarPontos = int(ranking[2][2][0])
+        quartoLugarPontos = int(ranking[3][2][0])
+        quintoLugarPontos = int(ranking[4][2][0])
         if pontos > primeiroLugarPontos:
             primeiroLugar, primeiroLugarPontos = nome, pontos
         elif pontos > segundoLugarPontos:
@@ -172,16 +200,15 @@ while True:
             quartoLugar, quartoLugarPontos = nome, pontos
         elif pontos > quintoLugarPontos:
             quintoLugar, quintoLugarPontos = nome, pontos
-        sg.popup_scrolled(f"===== RANKING =====\n\n1º - {primeiroLugar} - {primeiroLugarPontos} pontos\n2º - {segundoLugar} - {segundoLugarPontos} pontos\n3º - {terceiroLugar} - {terceiroLugarPontos} pontos\n4º - {quartoLugar} - {quartoLugarPontos} pontos\n5º - {quintoLugar} - {quintoLugarPontos} pontos\n")
-        ranking = {}
-        ranking[primeiroLugar] = primeiroLugarPontos
-        ranking[segundoLugar] = segundoLugarPontos
-        ranking[terceiroLugar] = terceiroLugarPontos
-        ranking[quartoLugar] = quartoLugarPontos
-        ranking[quintoLugar] = quintoLugarPontos
-        perguntas.facil = [x.setFeita(False) for x in perguntas.facil]
-        perguntas.medio = [x.setFeita(False) for x in perguntas.medio]
-        perguntas.dificil = [x.setFeita(False) for x in perguntas.dificil]
+        
+        sg.popup_scrolled(f"========== RANKING ==========\n\n1º - {primeiroLugar} - {primeiroLugarPontos} pontos\n2º - {segundoLugar} - {segundoLugarPontos} pontos\n3º - {terceiroLugar} - {terceiroLugarPontos} pontos\n4º - {quartoLugar} - {quartoLugarPontos} pontos\n5º - {quintoLugar} - {quintoLugarPontos} pontos\n")
+        
+        rank = open('ranking.txt','w')
+        rank.writelines(['========== RANKING ==========',f"\n1º - {primeiroLugar} - {primeiroLugarPontos} pontos",f"\n2º - {segundoLugar} - {segundoLugarPontos} pontos",f"\n3º - {terceiroLugar} - {terceiroLugarPontos} pontos",f"\n4º - {quartoLugar} - {quartoLugarPontos} pontos",f"\n5º - {quintoLugar} - {quintoLugarPontos} pontos"])
+        rank.close()
+        
+        jogador.jogadores = []
+        
         final.hide()
         abertura = janelas.abertura()
         
@@ -189,8 +216,6 @@ while True:
        
     
     if event == sg.WIN_CLOSED or event == 'Exit':
-        with open('ranking.pkl','wb') as arq:
-            arquivoPickle = pickle.dump(ranking,arq)
         break
         
         
